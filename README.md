@@ -125,28 +125,16 @@ Follow the prompts. The `vercel.json` already sets the required COOP/COEP header
 | Gesture | Action |
 |---------|--------|
 | ✍️ Index finger up | Draw |
-| ✊ Fist | Erase |
+| ✊ Fist | Pause / Stop drawing |
 | ✌️ Two fingers | Drag selected stroke |
 | 🤏 Thumb+index pinch | Select stroke |
-| 🖐 Open palm | Pause / Stop drawing |
+| 🖐 Open palm | Erase |
 
 ### Node Pipeline
 - Click the **NODE PIPELINE** bar at the bottom to expand/collapse
 - Toggle each effect node ON/OFF with the circle button
 - Drag the track slider to adjust intensity
 - Effects apply in real-time to all rendering
-
----
-
-## 🎛️ Effect Nodes
-
-| Node | Effect | Range |
-|------|--------|-------|
-| **Glow Intensity** | Bloom/shadow around strokes | 0–100% |
-| **Trail Decay** | How long laser trails persist | 50–100% |
-| **Brush Smoothing** | EMA smoothing on hand tracking | 0–95% |
-| **Blur Radius** | Gaussian blur on canvas | 0–20px |
-| **Distortion** | Wave distortion (placeholder for WebGL) | 0–100% |
 
 ---
 
