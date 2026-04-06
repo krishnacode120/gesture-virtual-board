@@ -1,0 +1,284 @@
+.sidebar {
+  width: 80px;
+  height: 100%;
+  background: rgba(8, 12, 24, 0.95);
+  border-right: 1px solid rgba(0, 212, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 8px;
+  gap: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+.sidebar::-webkit-scrollbar { display: none; }
+
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 0;
+}
+
+.sectionLabel {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  color: rgba(0, 212, 255, 0.5);
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+}
+
+.divider {
+  width: 60%;
+  height: 1px;
+  background: rgba(0, 212, 255, 0.08);
+  margin: 2px 0;
+}
+
+/* Tracking button */
+.trackingBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 6px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  background: rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 9px;
+  font-family: 'JetBrains Mono', monospace;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+  letter-spacing: 0.05em;
+}
+
+.trackingBtn.active {
+  border-color: #00ff88;
+  color: #00ff88;
+  background: rgba(0, 255, 136, 0.05);
+}
+
+.trackingDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.2s;
+}
+
+.trackingBtn.active .trackingDot {
+  background: #00ff88;
+  box-shadow: 0 0 6px #00ff88;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Brushes */
+.brushGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.brushBtn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 4px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.15s;
+  overflow: hidden;
+  width: 100%;
+}
+
+.brushBtn:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.brushBtn:active {
+  transform: scale(0.95);
+}
+
+.brushBtn.activeBrush {
+  border-color: var(--brush-color);
+  color: var(--brush-color);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.brushIcon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.brushLabel {
+  font-size: 9px;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.03em;
+}
+
+.activeIndicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--brush-color);
+}
+
+/* Colors */
+.colorPresets {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3px;
+  width: 100%;
+}
+
+.colorDot {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.15s;
+}
+
+.colorDot:hover { transform: scale(1.2); }
+
+.colorDot.activeColor {
+  border-color: white;
+  transform: scale(1.15);
+}
+
+.colorPicker {
+  width: 100%;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Sliders */
+.slider {
+  width: 100%;
+  -webkit-appearance: none;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(0, 212, 255, 0.15);
+  outline: none;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #00d4ff;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.3);
+}
+
+/* Effects section */
+.effectRow {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.effectLabel {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8px;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: left;
+}
+
+.effectValue {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8px;
+  color: rgba(0, 212, 255, 0.6);
+  text-align: right;
+}
+
+/* Themes */
+.themeGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+  width: 100%;
+}
+
+.themeBtn {
+  padding: 8px 4px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.themeBtn:hover { border-color: rgba(255, 255, 255, 0.2); }
+.themeBtn.activeTheme {
+  border-color: #00d4ff;
+}
+
+/* Actions */
+.actionGrid {
+  display: flex;
+  gap: 4px;
+  width: 100%;
+}
+
+.actionBtn {
+  flex: 1;
+  padding: 8px 4px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.actionBtn:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.actionBtn:active {
+  transform: scale(0.95);
+}
+
+.actionBtn.danger:hover {
+  border-color: rgba(255, 60, 60, 0.5);
+  background: rgba(255, 60, 60, 0.1);
+  color: #ff6666;
+}
